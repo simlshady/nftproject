@@ -1,0 +1,407 @@
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="{% static 'main.css' %}">
+  <link rel="stylesheet" href="{% static 'filter.css' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/venobox/1.9.3/venobox.min.css'>  
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'>
+  <link rel='stylesheet' href='https://unicons.iconscout.com/release/v3.0.6/css/line.css'>
+  
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+</head>
+<body>
+  <header>
+      <div class="header-container">
+          <header class="mobile-header">
+            <nav class="mobile-nav">
+              <ul class="navMenu">
+                  <li><a href="#0">Home</a></li>
+                  <li><a href="#GetRadoodle">Get a radoodle</a></li>
+                  <li><a href="#RoadMap">roadmap</a></li>
+                  <li><a href="#Founders">founders</a></li>
+                  <li><a href="#Contact">contact</a></li>
+              </ul>
+              <p class="closeButton"></p>
+            </nav>
+          </header>
+          <div class="navbar-section">
+            <div class="burgerIcon">
+                <i class="fas fa-bars"></i>
+                <!--<div class="burgerLine"></div>
+                <div class="burgerLine"></div>
+                <div class="burgerLine"></div>-->
+            </div>
+              <ul class="navbar-nav">
+                <li class="active"><a href="{% url 'home' %}">Home</a></li>
+                <li class="navbar-dropdown">
+                    <a href="#GetRadoodle" class="dropdown-toggler" data-dropdown="my-dropdown-id">
+                      Get a radoodle
+                    </a>
+                </li>
+                <li class="navbar-dropdown">
+                    <a href="#RoadMap" class="dropdown-toggler" data-dropdown="blog">
+                        roadmap
+                    </a>
+                </li>
+                <li><a href="#Founders">founders</a></li>
+                <li><a href="#Contact">contact</a></li>
+              </ul>
+          </div>
+          <div class="main-logo-section">
+              <img src="{% static 'images/radoodles-icon.webp' %}" alt="">
+          </div>
+      </div>
+  </header>
+  {% block content %}
+  <div class="filter-nfts-section">
+      <div class="s007">
+        <form>
+          <div class="inner-form">
+              <div class="basic-search">
+                  <div class="input-field">
+                      <div class="icon-wrap">
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
+                          <path d="M18.869 19.162l-5.943-6.484c1.339-1.401 2.075-3.233 2.075-5.178 0-2.003-0.78-3.887-2.197-5.303s-3.3-2.197-5.303-2.197-3.887 0.78-5.303 2.197-2.197 3.3-2.197 5.303 0.78 3.887 2.197 5.303 3.3 2.197 5.303 2.197c1.726 0 3.362-0.579 4.688-1.645l5.943 6.483c0.099 0.108 0.233 0.162 0.369 0.162 0.121 0 0.242-0.043 0.338-0.131 0.204-0.187 0.217-0.503 0.031-0.706zM1 7.5c0-3.584 2.916-6.5 6.5-6.5s6.5 2.916 6.5 6.5-2.916 6.5-6.5 6.5-6.5-2.916-6.5-6.5z"></path>
+                      </svg>
+                      </div>
+                      <input id="search" type="text" name="name" value="{{ request.GET.q }}" placeholder="Search..." />
+                      <!--<div class="result-count">
+                          <span id="result-num">{{ num_results }} </span>results
+                      </div>-->
+                  </div>
+              </div>
+              <div class="advance-search">
+                  <span class="desc">Advanced Search</span>
+                  <div class="row">
+                      <div class="input-field">
+                          <div class="input-select">
+                              <select data-trigger="" name="background">
+                                  <option placeholder="" value="">Background</option>
+                                  <option value="Holo">Holo</option>
+                                  <option value="Light Blue">Light Blue</option>
+                                  <option value="Light Clouds">Light Clouds</option>
+                                  <option value="Orange">Orange</option>
+                                  <option value="Pink">Pink</option>
+                                  <option value="Purple">Purple</option>
+                                  <option value="Rainbow Hills">Rainbow Hills</option>
+                                  <option value="Rainbow">Rainbow</option>
+                                  <option value="White">White</option>
+                                  <option value="Yellow">Yellow</option>
+                                  <option value="Blue">Blue</option>
+                                  <option value="Dusk">Dusk</option>
+                                  <option value="Gradient Blue">Gradient Blue</option>
+                                  <option value="Gradient Green">Gradient Green</option>
+                                  <option value="Gradient Heat">Gradient Heat</option>
+                                  <option value="Gradient Purple">Gradient Purple</option>
+                                  <option value="Gradient Red">Gradient Red</option>
+                                  <option value="Green">Green</option>
+                                  <option value="Holo Space">Holo Space</option>
+                              </select>
+                          </div>
+                      </div>
+                      <div class="input-field">
+                          <div class="input-select">
+                              <select data-trigger="" name="skin">
+                                  <option placeholder="" value="">Skin</option>
+                                  <option value="Rainbow">Rainbow</option>
+                                  <option value="White">White</option>
+                                  <option value="Black">Black</option>
+                                  <option value="Blue">Blue</option>
+                                  <option value="Brown">Brown</option>
+                                  <option value="Dalmation">Dalmation</option>
+                                  <option value="Dark Green">Dark Green</option>
+                                  <option value="Dark Purple">Dark Purple</option>
+                                  <option value="Gold">Gold</option>
+                                  <option value="Leopard">Leopard</option>
+                                  <option value="Magma">Magma</option>
+                                  <option value="Pina Colada">Pina Colada</option>
+                              </select>
+                          </div>
+                      </div>
+                      <div class="input-field">
+                          <div class="input-select">
+                              <select data-trigger="" name="body">
+                                  <option placeholder="" value="">Body</option>
+                                  <option value="Roman Seneter">Roman Seneter</option>
+                                  <option value="Squid Game">Squid Game</option>
+                                  <option value="Army Suit">Army Suit</option>
+                                  <option value="Astro Kit">Astro Kit</option>
+                                  <option value="Check Shirt">Check Shirt</option>
+                                  <option value="Furcoat">Furcoat</option>
+                                  <option value="Hawaian Shirt">Hawaian Shirt</option>
+                                  <option value="Hoodie">Hoodie</option>
+                                  <option value="Jail Suit">Jail Suit</option>
+                                  <option value="Karate Kit">Karate Kit</option>
+                                  <option value="Prince">Prince</option>
+                                  <option value="Robe">Robe</option>
+                              </select>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row second" style="justify-content: initial;gap: 22px;">
+                      <div class="input-field">
+                          <div class="input-select">
+                              <select data-trigger="" name="face">
+                                  <option placeholder="" value="">Face</option>
+                                  <option value="Sunglass Hearts">Sunglass Hearts</option> 
+                                  <option value="Sunglass Pink">Sunglass Pink</option> 
+                                  <option value="Sunglass Star">Sunglass Star</option> 
+                                  <option value="Third Eye">Third Eye</option> 
+                                  <option value="Cigar">Cigar</option> 
+                                  <option value="Cigarette">Cigarette</option> 
+                                  <option value="Confused">Confused</option> 
+                                  <option value="Flower Band">Flower Band</option> 
+                                  <option value="Iron Helmet">Iron Helmet</option> 
+                                  <option value="Joint">Joint</option> 
+                                  <option value="Laser Green">Laser Green</option> 
+                                  <option value="Lazer Red">Lazer Red</option> 
+                                  <option value="Pipe">Pipe</option> 
+                                  <option value="Plastered Face">Plastered Face</option> 
+                              </select>
+                          </div>
+                      </div>
+                      <div class="input-field">
+                          <div class="input-select">
+                              <select data-trigger="" name="head">
+                                  <option placeholder="" value="">Head</option>
+                                  <option value="Sailor Hat">Sailor Hat</option> 
+                                  <option value="Santa Hat">Santa Hat</option> 
+                                  <option value="Asian Hat">Asian Hat</option> 
+                                  <option value="Bandana">Bandana</option> 
+                                  <option value="Baseballcap">Baseballcap</option> 
+                                  <option value="Captain">Captain</option> 
+                                  <option value="Cowboy Hat">Cowboy Hat</option> 
+                                  <option value="Crown">Crown</option> 
+                                  <option value="Fish Tank">Fish Tank</option> 
+                                  <option value="Halo">Halo</option> 
+                                  <option value="Mask">Mask</option> 
+                              </select>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row third">
+                      <div class="input-field">
+                          <button class="search-btn">Search</button>
+                          <button class="btn-delete" id="delete">Remove Filters</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </form>
+      </div>
+      <div class="section-subtitle">
+          <h3>10.000 Unique Radoodle CATS living on the radix ledger</h3>
+      </div>
+  </div>
+  <div class="nfts-cards">
+    <div class="container" style="width: 100%;">
+      <div class="gallery section">
+        {% for item in nfts %}
+          <div class="card">
+            <div class="content">
+              <div class="front">
+                <img class="profile" width="100%" src="/static/collections/collection/images/{{ item.image }}" alt="{{ item.name }}"> 
+              </div>
+              <div class="back from-left">
+                <a class="venobox" data-gall="mygallery" data-title="{{ item.name }}" href="/static/collections/collection/images/{{ item.image }}">
+                  <h2>{{ item.name }}</h2>
+                  <h3>{{ forloop.counter }}</h3>
+                  <p class="des">
+                    {{ item.description }}
+                  </p>
+                  <ul class="social-icon">   
+                    <li>
+                      <div class="Sharing">
+                        <!--<div class="circle-share">
+                          <i class="fas fa-share-alt"></i>
+                        </div>-->
+                        <ul>
+                          <li><a data-size="small" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://127.0.0.1:8000/static/collections/collection/images/{{ item.image }}"><i class="fab fa-facebook"></i></a></li>
+                          <li><a data-size="small" target="_blank" href="whatsapp://send?text=http://127.0.0.1:8000/static/collections/collection/images/{{ item.image }}" data-action="share/whatsapp/share"><i class="fab fa-whatsapp"></i></a></li>
+                          <li><a data-size="small" target="_blank" href="http://www.reddit.com/submit?url=http://127.0.0.1:8000/static/collections/collection/images/{{ item.image }}&title={{ item.name }}"><i class="fab fa-reddit"></i></a></li>
+                          <li><a data-size="small" target="_blank" href="https://twitter.com/home?status={{ item.name}}{{ item.description }}http://127.0.0.1:8000/static/collections/collection/images/{{ item.image }}/"><i class="fab fa-twitter"></i></a></li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li>
+                      <a style="display:block;
+                      background:#333;
+                      color:#fff;
+                      width:40px;
+                      height:40px;
+                      text-align:center;
+                      line-height:40px;
+                      border-radius:100%; opacity: 0;" class="copy-link" onclick="copyLink()"><i class="fas fa-clone"></i></a>
+                    </li>
+                  </ul>
+                </a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="browse-all-section">
+        <a href="{% url 'whole_collection' %}" class="link link--secondary">Browse whole collection</a>
+      </div>
+    </div>
+  </div>
+  <div class="rarity-chart">
+    <div class="container">
+      <div class="section-header">
+        Rarity Chart
+      </div>
+      <img src="{% static 'images/rarity_chart.webp' %}" alt="">
+    </div>
+  </div>
+  {% endblock %}
+  <div id="GetRadoodle" class="copy-link-section">
+      <div class="container">
+          <div class="title_style">
+              <div class="border_left hidden-xs"></div>
+              <h2>How to get a radoodle</h2>
+              <div class="border_right"></div>
+          </div>
+          <div class="section-description">
+              our biggest goal is to build a large community. therefore a radoodle only costs 30.
+              <br>
+              to get your radoodle Send 30 xrd or a multiple thereof to the following address
+          </div>
+          <div id="inviteCode" class="invite-page">
+            <input id="link" value="{{ copy_link.copy_link }}" readonly>
+            <div id="copy">
+              <i class="fa fa-clipboard" aria-hidden="true" data-copytarget="#link"></i>
+            </div>
+          </div>
+      </div>
+  </div>
+  <div id="Founders" class="rarity-chart founders">
+      <div class="container">
+          <div class="section-header">
+            FOUNDERS
+          </div>
+          <div class="founders-cards">
+              <div class="nft">
+                  <div class='main'>
+                      <img style="margin-top: 0;" class='tokenImage' src="https://static.wixstatic.com/media/e84ef5_afa2894a49a64595a61c9a263db74d3b~mv2.png/v1/fill/w_426,h_426,al_c,usm_0.66_1.00_0.01,enc_auto/643.png" alt="MATT" />
+                      <h2 style="color: #fff;">MATT</h2>
+                      <p class='description'>Radix enthusiast for over 5 years and nft collector. responsible for the design.</p>
+                      <hr />
+                  </div>
+              </div>
+              <div class="nft">
+                  <div class='main'>
+                      <img style="margin-top: 0;" class='tokenImage' src="https://static.wixstatic.com/media/e84ef5_a530722507904028be7fe370f263ae0c~mv2.png/v1/fill/w_436,h_438,al_c,usm_0.66_1.00_0.01,enc_auto/1278.png" alt="SVEN" />
+                      <h2 style="color: #fff;">SVEN</h2>
+                      <p class='description'>best Friend of matt and developer since six years. responsible for everything else lol</p>
+                      <hr />
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div id="RoadMap" class="rarity-chart roadmap">
+      <div class="container">
+          <div class="section-header">
+              ROADMAP
+          </div>
+          <div class="roadmap-img">
+              <img src="{% static 'images/roadmap.webp' %}" alt="">
+          </div>
+          <div class="section-description">
+              we have a lot in mind. community building is top priority. merch is also an option later on. we also want to build a smart contract nft marketplace once scrypto is ready on mainnet, etc etc...
+          </div>
+      </div>
+  </div>
+  <div id="Contact" class="rarity-chart contact">
+      <div class="page-wrapper">
+          <div class="content-wrapper">
+            <h1>Contact us</h1>
+            <div class="alert"></div>
+            <form class="contact-card" id="ajax_form">
+              <div>
+                <label id="first_name" for="first_name">First Name</label>
+                <input type="text" id="first_name" placeholder="First Name" required>
+                <span class="ok-icon"></span>
+              </div>
+              <div>
+                  <label id="last_name" for="last_name">Last Name</label>
+                  <input type="text" id="last_name" placeholder="Last Name" required>
+                  <span class="ok-icon"></span>
+              </div>
+              <div>
+                <label for="email">E-mail</label>
+                <input type="email" placeholder="E-mail" required>
+                <span class="ok-icon"></span>
+              </div>
+              <div>
+                <label for="message">Message</label>
+                <textarea name="message" id="message" cols="30" rows="10" placeholder="Message" required></textarea>
+                <span class="ok-icon"></span>
+              </div>
+              <button type="submit contact-button">Send</button>
+            </form>
+          </div>
+      </div>
+  </div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/venobox/1.9.3/venobox.min.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+  <script src="{% static 'extention/choices.js' %}"></script>
+  <script src="{% static 'extention/custom-materialize.js' %}"></script>
+  <script src="{% static 'extention/flatpickr.js' %}"></script>
+  <script src="{% static 'main.js' %}"></script>
+  
+  <script>
+      const customSelects = document.querySelectorAll("select");
+      const deleteBtn = document.getElementById('delete')
+      const choices = new Choices('select',
+      {
+        searchEnabled: false,
+        removeItemButton: true,
+        itemSelectText: '',
+      });
+      for (let i = 0; i < customSelects.length; i++)
+      {
+        customSelects[i].addEventListener('addItem', function(event)
+        {
+          if (event.detail.value)
+          {
+            let parent = this.parentNode.parentNode
+            parent.classList.add('valid')
+            parent.classList.remove('invalid')
+          }
+          else
+          {
+            let parent = this.parentNode.parentNode
+            parent.classList.add('invalid')
+            parent.classList.remove('valid')
+          }
+        }, false);
+      }
+      deleteBtn.addEventListener("click", function(e)
+      {
+        e.preventDefault()
+        const deleteAll = document.querySelectorAll('.choices__button')
+        for (let i = 0; i < deleteAll.length; i++)
+        {
+          deleteAll[i].click();
+        }
+      });
+
+  </script> 
+</body>
+</html>

@@ -1,0 +1,236 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="filter-nfts-section">
+    <div class="s007">
+        <form>
+            <div class="inner-form">
+                <div class="basic-search">
+                    <div class="input-field">
+                        <div class="icon-wrap">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
+                            <path d="M18.869 19.162l-5.943-6.484c1.339-1.401 2.075-3.233 2.075-5.178 0-2.003-0.78-3.887-2.197-5.303s-3.3-2.197-5.303-2.197-3.887 0.78-5.303 2.197-2.197 3.3-2.197 5.303 0.78 3.887 2.197 5.303 3.3 2.197 5.303 2.197c1.726 0 3.362-0.579 4.688-1.645l5.943 6.483c0.099 0.108 0.233 0.162 0.369 0.162 0.121 0 0.242-0.043 0.338-0.131 0.204-0.187 0.217-0.503 0.031-0.706zM1 7.5c0-3.584 2.916-6.5 6.5-6.5s6.5 2.916 6.5 6.5-2.916 6.5-6.5 6.5-6.5-2.916-6.5-6.5z"></path>
+                        </svg>
+                        </div>
+                        <input id="search" type="text" name="name" value="{{ request.GET.q }}" placeholder="Search..." />
+                        <!--<div class="result-count">
+                            <span id="result-num">{{ num_results }} </span>results
+                        </div>-->
+                    </div>
+                </div>
+                <div class="advance-search">
+                    <span class="desc">Advanced Search</span>
+                    <div class="row">
+                        <div class="input-field">
+                            <div class="input-select">
+                                <select data-trigger="" name="background">
+                                    <option placeholder="" value="">Background</option>
+                                    <option value="Holo">Holo</option>
+                                    <option value="Light Blue">Light Blue</option>
+                                    <option value="Light Clouds">Light Clouds</option>
+                                    <option value="Orange">Orange</option>
+                                    <option value="Pink">Pink</option>
+                                    <option value="Purple">Purple</option>
+                                    <option value="Rainbow Hills">Rainbow Hills</option>
+                                    <option value="Rainbow">Rainbow</option>
+                                    <option value="White">White</option>
+                                    <option value="Yellow">Yellow</option>
+                                    <option value="Blue">Blue</option>
+                                    <option value="Dusk">Dusk</option>
+                                    <option value="Gradient Blue">Gradient Blue</option>
+                                    <option value="Gradient Green">Gradient Green</option>
+                                    <option value="Gradient Heat">Gradient Heat</option>
+                                    <option value="Gradient Purple">Gradient Purple</option>
+                                    <option value="Gradient Red">Gradient Red</option>
+                                    <option value="Green">Green</option>
+                                    <option value="Holo Space">Holo Space</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="input-field">
+                            <div class="input-select">
+                                <select data-trigger="" name="skin">
+                                    <option placeholder="" value="">Skin</option>
+                                    <option value="Rainbow">Rainbow</option>
+                                    <option value="White">White</option>
+                                    <option value="Black">Black</option>
+                                    <option value="Blue">Blue</option>
+                                    <option value="Brown">Brown</option>
+                                    <option value="Dalmation">Dalmation</option>
+                                    <option value="Dark Green">Dark Green</option>
+                                    <option value="Dark Purple">Dark Purple</option>
+                                    <option value="Gold">Gold</option>
+                                    <option value="Leopard">Leopard</option>
+                                    <option value="Magma">Magma</option>
+                                    <option value="Pina Colada">Pina Colada</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="input-field">
+                            <div class="input-select">
+                                <select data-trigger="" name="body">
+                                    <option placeholder="" value="">Body</option>
+                                    <option value="Roman Seneter">Roman Seneter</option>
+                                    <option value="Squid Game">Squid Game</option>
+                                    <option value="Army Suit">Army Suit</option>
+                                    <option value="Astro Kit">Astro Kit</option>
+                                    <option value="Check Shirt">Check Shirt</option>
+                                    <option value="Furcoat">Furcoat</option>
+                                    <option value="Hawaian Shirt">Hawaian Shirt</option>
+                                    <option value="Hoodie">Hoodie</option>
+                                    <option value="Jail Suit">Jail Suit</option>
+                                    <option value="Karate Kit">Karate Kit</option>
+                                    <option value="Prince">Prince</option>
+                                    <option value="Robe">Robe</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row second" style="justify-content: initial;gap: 22px;">
+                        <div class="input-field">
+                            <div class="input-select">
+                                <select data-trigger="" name="face">
+                                    <option placeholder="" value="">Face</option>
+                                    <option value="Sunglass Hearts">Sunglass Hearts</option> 
+                                    <option value="Sunglass Pink">Sunglass Pink</option> 
+                                    <option value="Sunglass Star">Sunglass Star</option> 
+                                    <option value="Third Eye">Third Eye</option> 
+                                    <option value="Cigar">Cigar</option> 
+                                    <option value="Cigarette">Cigarette</option> 
+                                    <option value="Confused">Confused</option> 
+                                    <option value="Flower Band">Flower Band</option> 
+                                    <option value="Iron Helmet">Iron Helmet</option> 
+                                    <option value="Joint">Joint</option> 
+                                    <option value="Laser Green">Laser Green</option> 
+                                    <option value="Lazer Red">Lazer Red</option> 
+                                    <option value="Pipe">Pipe</option> 
+                                    <option value="Plastered Face">Plastered Face</option> 
+                                </select>
+                            </div>
+                        </div>
+                        <div class="input-field">
+                            <div class="input-select">
+                                <select data-trigger="" name="head">
+                                    <option placeholder="" value="">Head</option>
+                                    <option value="Sailor Hat">Sailor Hat</option> 
+                                    <option value="Santa Hat">Santa Hat</option> 
+                                    <option value="Asian Hat">Asian Hat</option> 
+                                    <option value="Bandana">Bandana</option> 
+                                    <option value="Baseballcap">Baseballcap</option> 
+                                    <option value="Captain">Captain</option> 
+                                    <option value="Cowboy Hat">Cowboy Hat</option> 
+                                    <option value="Crown">Crown</option> 
+                                    <option value="Fish Tank">Fish Tank</option> 
+                                    <option value="Halo">Halo</option> 
+                                    <option value="Mask">Mask</option> 
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row third">
+                        <div class="input-field">
+                            <button class="search-btn">Search</button>
+                            <button class="btn-delete" id="delete">Remove Filters</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="section-subtitle">
+        <h3>10.000 Unique Radoodle CATS living on the radix ledger</h3>
+    </div>
+</div>
+<div class="nfts-cards">
+    <div class="container" style="width: 100%;width: 100%;display: flex;flex-direction: column; justify-content: center;">
+        <div class="gallery">
+            {% for item in nfts %}
+            <div class="card">
+                <div class="content">
+                  <div class="front">
+                    <img class="profile" width="100%" src="/static/collections/collection/images/{{ item.image }}" alt="{{ item.name }}"> 
+                  </div>
+                  <div class="back from-left">
+                    <a class="venobox" data-gall="mygallery" data-title="{{ item.name }}" href="/static/collections/collection/images/{{ item.image }}">
+                      <h2>{{ item.name }}</h2>
+                      <h3>{{ forloop.counter }}</h3>
+                      <p class="des">
+                        {{ item.description }}
+                      </p>
+                      <ul class="social-icon">   
+                        <li>
+                          <div class="Sharing">
+                            <!--<div class="circle-share">
+                              <i class="fas fa-share-alt"></i>
+                            </div>-->
+                            <ul>
+                              <li><a data-size="small" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://127.0.0.1:8000/static/collections/collection/images/{{ item.image }}"><i class="fab fa-facebook"></i></a></li>
+                              <li><a data-size="small" target="_blank" href="whatsapp://send?text=http://127.0.0.1:8000/static/collections/collection/images/{{ item.image }}" data-action="share/whatsapp/share"><i class="fab fa-whatsapp"></i></a></li>
+                              <li><a data-size="small" target="_blank" href="http://www.reddit.com/submit?url=http://127.0.0.1:8000/static/collections/collection/images/{{ item.image }}&title={{ item.name }}"><i class="fab fa-reddit"></i></a></li>
+                              <li><a data-size="small" target="_blank" href="https://twitter.com/home?status={{ item.name}}{{ item.description }}http://127.0.0.1:8000/static/collections/collection/images/{{ item.image }}/"><i class="fab fa-twitter"></i></a></li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li>
+                          <a style="display:block;
+                          background:#333;
+                          color:#fff;
+                          width:40px;
+                          height:40px;
+                          text-align:center;
+                          line-height:40px;
+                          border-radius:100%; opacity: 0;" class="copy-link" onclick="copyLink()"><i class="fas fa-clone"></i></a>
+                        </li>
+                      </ul>
+                    </a>
+                  </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <ul class="pages">
+
+            {% if nfts.has_previous %}
+                <li class="page"><a href="?page={{ nfts.previous_page_number }}">&lt;</a></li>
+            {% else %}
+                <li class="page"><a style="pointer-events: none;">&lt;</a></li>
+            {% endif %}
+            
+            {% if nfts.number|add:'-3' > 1 %}
+                <li class="page"><a href="?page={{ nfts.number|add:'-3' }}">...</a></li>
+            {% endif %}
+            
+            {% for i in nfts.paginator.page_range %}
+                {% if nfts.number == i %}
+                    <li class="page selected"><a href="#">{{ i }}</a></li>
+                {% elif i > nfts.number|add:'-2' and i < nfts.number|add:'2' %}
+                    <li class="page"><a href="?page={{ i }}">{{ i }}</a></li>
+                {% endif %}
+            {% endfor %}
+            
+            {% if nfts.paginator.num_pages > nfts.number|add:'4' %}
+                <li class="page"><a href="?page={{ nfts.number|add:'5' }}">&hellip;</a></li>
+            {% endif %}
+            
+            {% if nfts.has_next %}
+                <li class="page"><a href="?page={{ nfts.next_page_number }}">&gt;</a></li>
+            {% else %}
+                <li class="page disabled" style="pointer-events: none;"> <a href="#">&gt;</a></li>
+            {% endif %}
+            
+        </ul>
+        <!--<ul class="pages">
+            <li class="page"><a href="#">&lt;</a></li>
+            <li class="page"><a href="#">...</a></li>
+            <li class="page"><a href="#">2</a></li>
+            <li class="page selected"><a href="#">3</a></li>
+            <li class="page"><a href="#">4</a></li>
+            <li class="page"><a href="#">...</a></li>
+            <li class="page"><a href="#">&gt;</a></li>
+        </ul>-->
+    </div>
+</div>
+
+{% endblock %}

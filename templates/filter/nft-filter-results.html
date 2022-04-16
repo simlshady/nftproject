@@ -1,0 +1,43 @@
+{% for item in nfts %}
+<div class="card">
+  <div class="content">
+    <div class="front">
+      <img class="profile" width="100%" src="/static/collections/collection/images/{{ item.image }}" alt="{{ item.name }}"> 
+    </div>
+    <div class="back from-left">
+      <a class="venobox" data-gall="mygallery" data-title="{{ item.name }}" href="/static/collections/collection/images/{{ item.image }}">
+        <h2>{{ item.name }}</h2>
+        <h3>{{ forloop.counter }}</h3>
+        <p class="des">
+          {{ item.description }}
+        </p>
+        <ul class="social-icon">   
+          <li>
+            <div class="Sharing">
+              <!--<div class="circle-share">
+                <i class="fas fa-share-alt"></i>
+              </div>-->
+              <ul>
+                <li><a data-size="small" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://127.0.0.1:8000/static/collections/collection/images/{{ item.image }}"><i class="fab fa-facebook"></i></a></li>
+                <li><a data-size="small" target="_blank" href="whatsapp://send?text=http://127.0.0.1:8000/static/collections/collection/images/{{ item.image }}" data-action="share/whatsapp/share"><i class="fab fa-whatsapp"></i></a></li>
+                <li><a data-size="small" target="_blank" href="http://www.reddit.com/submit?url=http://127.0.0.1:8000/static/collections/collection/images/{{ item.image }}&title={{ item.name }}"><i class="fab fa-reddit"></i></a></li>
+                <li><a data-size="small" target="_blank" href="https://twitter.com/home?status={{ item.name}}{{ item.description }}http://127.0.0.1:8000/static/collections/collection/images/{{ item.image }}/"><i class="fab fa-twitter"></i></a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a style="display:block;
+            background:#333;
+            color:#fff;
+            width:40px;
+            height:40px;
+            text-align:center;
+            line-height:40px;
+            border-radius:100%; opacity: 0;" class="copy-link" onclick="copyLink()"><i class="fas fa-clone"></i></a>
+          </li>
+        </ul>
+      </a>
+    </div>
+  </div>
+</div>
+{% endfor %}
